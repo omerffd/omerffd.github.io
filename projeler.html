@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projelerim</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/image/photo1.jpg" alt="kişisel_foto">
+            <a href="index.html">Ömer Faruk Doğan</a>
+        </div>
+
+        <div id="clock"></div> 
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimda.html">Hakkımda</a></li>
+                <li><a href="projeler.html">Projelerim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="projects-section">
+    <h1>Projelerim</h1>
+    <p>Bu sayfada yaptığım ve şu anda çalıştığım projeleri görebilirsiniz.</p>
+
+    <label for="filterSelect">Projeleri Filtrele:</label>
+    <select id="filterSelect" onchange="filterProjects()">
+        <option value="hepsi">Tüm Projeler</option>
+        <option value="fav">En Beğenilen Projeler</option>
+        <option value="success">En Başarılı Projeler</option>
+    </select>
+
+    
+    <div class="proje_lists">
+        <div class="proje" data-category="success">
+            <img src="assets/image/photo_4.jpg" alt="EYS fotoğraf" class="proje_image">
+            <h2>Engelli Yaşam Sistemi</h2>
+            <p>Bu proje de asıl amacımız projenin özgün noktası engelli vatandaşlarımızın aralarındaki iletişimi kolaylaştırmak için yapılmış bir proje olmasıdır. Ama engelli vatandaşların normal bireylerle de iletişim kurmasını hedefledik. Bu projeyle teknofeste başvurduk ve birincilikle finale kaldık. Daha sonrasında Antalya da olan finallere katılarak projemizi sunma fırsatı yakaladık.</p>
+        </div>
+
+        <div class="proje" data-category="fav">
+            <img src="assets/image/photo_5.jpg" alt="Acil Servis Sistemi fotoğraf" class="proje_image">
+            <h2>Acil Servis Uyarı Sistemi</h2>
+            <p>Bu projem can kaybının daha az olması için geliştirdiğim projedir. Burda insanların acil durum seviyesini ölçüp ona göre daah aciliyetli insanları sağlık çalışanlarının da görmesini sağlamaktır.Ayrıca geliştireceğim mobil uygulama ile de sağlık çalışanlarının da hastanın neyi olduğu ve gereken şeyleri daha acil müdahele ile yapıp insan can kaybını azaltmayı hedeflemekteyiz.</p>
+        </div>
+
+        <div class="proje" data-category="fav">
+            <img src="assets/image/photo_6.jpg" alt="Sağlıklı yolculuk fotoğraf" class="proje_image">
+            <h2>Metropol Şehirlerde Yolcu Güvenliği</h2>
+            <p>Bu proje şuan yürütmekte olduğum bir yapay zeka projesidir. Bu proje de metropol şehirlerde insanların toplu taşımaya daha rahat ve güvenilir bir şekilde binmesini hedeflemekteyiz. Ayrıca bu sorunu da çözerek toplu taşımanın daha yaygın olacağı ve kullanılan araba miktarının düşerek havanın da temiz olması demek anlamına geliyor. Makine öğrenmesi ve yapay zekayla birlikte toplu taşıma da hem insanların sinir ve gerginlik seviyesini ölçecek hem de o otobüsteki Karbondioksit oranı ve oksijen oranını da kullandığımız yapay zekayla tespit ederek insanlara daha güvenilir ve daha konforlu bir seyahat vadediyoruz.Bunu ise mobil uygulamaya aktarıp insanların daha kolay ulaşmasını hedefliyoruz.</p>
+        </div>
+    </div>
+</main>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Büyük Proje Görseli" class="modal-image">
+            <h2 id="modalTitle">Proje Başlığı</h2>
+            <p id="modalDescription">Proje açıklaması burada görünecek.</p>
+        </div>
+   </div>
+
+    <script src="js/script.js" defer></script>
+
+</body>
+</html>
+

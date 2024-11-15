@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/image/photo1.jpg" alt="kişisel_foto">
+            <a href="#">Ömer Faruk Doğan</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimda.html">Hakkımda</a></li>
+                <li><a href="projeler.html">Projelerim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="home">
+        <div class="home_image">
+            <img src="assets/image/photo_2.jpg" alt="kişi fotoğraf">
+        </div>
+        <div class="home-contents">
+            <h1>Merhaba. Siteme Hoşgeldiniz.</h1>
+            <p><i>Projeleri ile günümüz de yenilikler katan ve topluma fayda sağlayan projeler geliştiren bir yazılımcının sitesine hoş geldiniz. Bu sitede ana sayfa projelerim ve hakkımda sayfaları mevcuttur. Üstüne tıklayarak öğrenmek istediğiniz ve bana dair merak ettiğiniz şeylere ulaşabilirsiniz.</i></p>
+            <p><i>Ana Sayfada en altta bulunan iletişim formu ile de eksik noktaları ya da benimle iletişime geçmek için kullanabilirsiniz.</i></p>
+            <p id="clock">00:00:00</p>
+        </div>
+    </div>
+
+    <main>
+        
+        <h2>İletişim Formu</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <label for="name">İsim:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Mesaj:</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Gönder</button>
+        </form>
+
+    </main>
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
