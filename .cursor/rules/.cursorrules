@@ -1,0 +1,85 @@
+# Cursor Rules: CV Web Sitesi
+
+## 🎯 Proje Hedefi
+- **Proje Adı:** Kişisel CV Web Sitesi
+- **Amaç:** 4 sayfalık, dark mod + mavi tonlu kişisel web sitesi
+- **Teknoloji:** HTML + CSS
+- **Sayfalar:** Ana Sayfa, Hakkında, Blog, İletişim
+- **Tasarım:** Aşağı doğru kaydırmalı, header ortalanmış, sade yapı
+
+---
+
+## 🧭 Sayfa Yapısı
+
+1. **Ana Sayfa (`index.html`)**
+   - Karşılama metni ve isteğe bağlı fotoğraf.
+   - Aşağı kaydırıldıkça içerik gösterimi.
+   
+2. **Hakkında (`hakkinda.html`)**
+   - Eğitim bilgileri.
+   - Beceriler ve deneyimler.
+
+3. **Blog (`blog.html`)**
+   - 2–3 örnek yazı (HTML içinde sabit içerik).
+   - Hover efektiyle öne çıkan kart tasarımları.
+
+4. **İletişim (`iletisim.html`)**
+   - Basit form: Ad, E-posta, Mesaj.
+   - Dark mod uyumlu form tasarımı.
+
+---
+
+## 🎨 Renk Paleti
+
+- **Arka Plan:** `#0D1117`  
+- **Yazı:** `#E6EDF3`  
+- **Vurgu Rengi:** `#1F6FEB`  
+- **Hover / Link:** `#388BFF`
+
+---
+
+## 🧩 Tasarım Kuralları
+
+- Header tüm sayfalarda **ortada** yer alacak.
+- Sayfalar arasında `<a href="...">` ile geçiş sağlanacak.
+- Sayfa geçişleri `scroll-behavior: smooth;` ile yumuşak olacak.
+- Sadece HTML + CSS kullanılacak (JavaScript yok).
+- Responsive zorunlu değil, ancak hizalamalar düzgün olmalı.
+
+---
+
+## 🪶 CSS Kuralları
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #0D1117;
+  color: #E6EDF3;
+}
+
+a {
+  color: #1F6FEB;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #388BFF;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
