@@ -12,7 +12,10 @@
 <body>
     <header>
         <nav>
-            <ul>
+            <div class="mobile-nav-toggle">
+                <span class="material-icons">menu</span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#about">Hakkımda</a></li>
                 <li><a href="#projects">Projeler</a></li>
@@ -984,6 +987,40 @@
                 console.error('Error:', error);
             });
         }
+    </script>
+
+    <!-- Mobil Menü JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const menuIcon = mobileNavToggle.querySelector('.material-icons');
+
+            mobileNavToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                if (navLinks.classList.contains('active')) {
+                    menuIcon.textContent = 'close';
+                } else {
+                    menuIcon.textContent = 'menu';
+                }
+            });
+
+            // Menü linklerine tıklandığında menüyü kapat
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuIcon.textContent = 'menu';
+                });
+            });
+
+            // Sayfa scroll olduğunda menüyü kapat
+            window.addEventListener('scroll', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuIcon.textContent = 'menu';
+                }
+            });
+        });
     </script>
 </body>
 </html> 

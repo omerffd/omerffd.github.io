@@ -1338,3 +1338,264 @@ footer {
         transform: translateY(0);
     }
 } 
+
+/* Mobil Navbar Stilleri */
+.mobile-nav-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1001;
+    background: rgba(var(--accent-color-rgb), 0.1);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(var(--accent-color-rgb), 0.2);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    background: rgba(var(--accent-color-rgb), 0.2);
+}
+
+.mobile-nav-toggle .material-icons {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+}
+
+/* Mobil Uyumluluk İyileştirmeleri */
+@media screen and (max-width: 768px) {
+    /* Mobil Navbar */
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-dark);
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: rgba(var(--accent-color-rgb), 0.1);
+    }
+
+    /* Genel Bölüm Ayarları */
+    section {
+        padding: 60px 1rem;
+        min-height: auto;
+    }
+
+    section::after,
+    section::before {
+        display: none; /* Scroll indikatörünü mobilde kaldır */
+    }
+
+    /* Hero Bölümü */
+    .hero-section {
+        padding: 80px 1rem 2rem;
+    }
+
+    /* Yetenek Çubukları */
+    .skills-category {
+        padding: 1rem;
+    }
+
+    .skill-bars {
+        gap: 1.5rem;
+    }
+
+    /* Blog Kartları */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .blog-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    /* Proje Kartları */
+    .projects-grid {
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 1.2rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+        width: calc(100% - 2rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Başlık Boyutları */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Metin Boyutları */
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* Butonlar */
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .details-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* İletişim Formu */
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Sosyal Medya İkonları */
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Proje ve Blog Kartları */
+    .project-card,
+    .blog-card {
+        margin: 0 0.5rem;
+    }
+
+    .project-tags {
+        gap: 0.3rem;
+    }
+
+    .tag {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    /* Scroll Davranışı */
+    html {
+        scroll-snap-type: none; /* Mobilde smooth scroll'u kaldır */
+    }
+}
+
+/* Tablet için Ek Düzenlemeler */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .projects-grid,
+    .blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Yatay Mobil Cihazlar için Düzenlemeler */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    section {
+        min-height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .hero-section {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .hero-avatar-wrapper {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+} 
